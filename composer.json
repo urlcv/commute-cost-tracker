@@ -1,0 +1,34 @@
+{
+    "name": "urlcv/commute-cost-tracker",
+    "description": "Frontend-only commute cost calculator that reveals the hidden annual cost of office commuting. Powers the free Commute Cost Tracker tool at urlcv.com.",
+    "type": "library",
+    "license": "MIT",
+    "keywords": ["commute", "salary", "calculator", "remote-work", "recruitment", "cost-of-commuting"],
+    "homepage": "https://urlcv.com/tools/commute-cost-tracker",
+    "authors": [
+        {
+            "name": "URLCV",
+            "homepage": "https://urlcv.com"
+        }
+    ],
+    "require": {
+        "php": "^8.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "URLCV\\CommuteCostTracker\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "URLCV\\CommuteCostTracker\\Laravel\\CommuteCostTrackerServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "sort-packages": true
+    },
+    "minimum-stability": "stable"
+}
