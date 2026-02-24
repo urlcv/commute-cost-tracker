@@ -69,9 +69,9 @@ Frontend-only calculator that reveals the hidden annual cost of commuting for of
 
 ---
 
-## Screenshots
+## Screenshot
 
-_Coming soon_
+![Commute Cost Tracker — multi-leg commute with Car, Train and Walk](screenshot.png)
 
 ---
 
