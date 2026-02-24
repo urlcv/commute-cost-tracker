@@ -13,8 +13,8 @@
         <button
             type="button"
             @click="comparison = !comparison"
-            :class="comparison ? 'bg-indigo-600' : 'bg-gray-300'"
-            class="relative inline-flex h-6 w-11 shrink-0 cursor-pointer rounded-full transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+            :class="comparison ? 'bg-primary-600' : 'bg-gray-300'"
+            class="relative inline-flex h-6 w-11 shrink-0 cursor-pointer rounded-full transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2"
             role="switch"
             :aria-checked="comparison"
         >
@@ -39,19 +39,19 @@
                 <div>
                     <label class="block text-sm font-medium text-gray-600 mb-1">Annual salary (&pound;)</label>
                     <input type="number" x-model.number="{{ $r }}.salary" min="0" step="500"
-                           class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-indigo-500 focus:border-transparent" />
+                           class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-primary-500 focus:border-transparent" />
                 </div>
 
                 <div class="grid grid-cols-2 gap-4">
                     <div>
                         <label class="block text-sm font-medium text-gray-600 mb-1">Office days / week</label>
                         <input type="number" x-model.number="{{ $r }}.officeDays" min="0" max="5" step="1"
-                               class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-indigo-500 focus:border-transparent" />
+                               class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-primary-500 focus:border-transparent" />
                     </div>
                     <div>
                         <label class="block text-sm font-medium text-gray-600 mb-1">Work weeks / year</label>
                         <input type="number" x-model.number="{{ $r }}.workWeeks" min="40" max="52" step="1"
-                               class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-indigo-500 focus:border-transparent" />
+                               class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-primary-500 focus:border-transparent" />
                     </div>
                 </div>
             </fieldset>
@@ -65,7 +65,7 @@
                 </p>
 
                 {{-- Journey summary --}}
-                <div x-show="{{ $r }}.legs.length > 1" class="rounded-lg bg-indigo-50 border border-indigo-100 px-3 py-2 text-sm text-indigo-700 tabular-nums" x-text="legSummary({{ $r }})">
+                <div x-show="{{ $r }}.legs.length > 1" class="rounded-lg bg-primary-50 border border-primary-100 px-3 py-2 text-sm text-primary-700 tabular-nums" x-text="legSummary({{ $r }})">
                 </div>
 
                 {{-- Leg cards --}}
@@ -89,8 +89,8 @@
                                     type="button"
                                     @click="leg.mode = m.value"
                                     :class="leg.mode === m.value
-                                        ? 'bg-indigo-600 text-white border-indigo-600'
-                                        : 'bg-white text-gray-700 border-gray-300 hover:border-indigo-400'"
+                                        ? 'bg-primary-600 text-white border-primary-600'
+                                        : 'bg-white text-gray-700 border-gray-300 hover:border-primary-400'"
                                     class="px-3 py-1.5 text-xs font-medium rounded-lg border transition-colors"
                                     x-text="m.label"
                                 ></button>
@@ -101,7 +101,7 @@
                         <div>
                             <label class="block text-sm font-medium text-gray-600 mb-1">Minutes one way</label>
                             <input type="number" x-model.number="leg.minutes" min="0" max="240" step="5"
-                                   class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-indigo-500 focus:border-transparent" />
+                                   class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-primary-500 focus:border-transparent" />
                         </div>
 
                         {{-- Car fields --}}
@@ -110,43 +110,43 @@
                                 <div>
                                     <label class="block text-xs font-medium text-gray-600 mb-1">Distance one way (miles)</label>
                                     <input type="number" x-model.number="leg.distanceMiles" min="0" step="1"
-                                           class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-indigo-500 focus:border-transparent" />
+                                           class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-primary-500 focus:border-transparent" />
                                 </div>
                                 <div>
                                     <label class="block text-xs font-medium text-gray-600 mb-1">MPG (UK)</label>
                                     <input type="number" x-model.number="leg.mpg" min="1" step="1"
-                                           class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-indigo-500 focus:border-transparent" />
+                                           class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-primary-500 focus:border-transparent" />
                                 </div>
                             </div>
                             <div class="grid grid-cols-2 gap-3">
                                 <div>
                                     <label class="block text-xs font-medium text-gray-600 mb-1">Fuel cost (&pound;/litre)</label>
                                     <input type="number" x-model.number="leg.fuelCostPerLitre" min="0" step="0.01"
-                                           class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-indigo-500 focus:border-transparent" />
+                                           class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-primary-500 focus:border-transparent" />
                                 </div>
                                 <div>
                                     <label class="block text-xs font-medium text-gray-600 mb-1">Parking (&pound;/day)</label>
                                     <input type="number" x-model.number="leg.parkingPerDay" min="0" step="0.50"
-                                           class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-indigo-500 focus:border-transparent" />
+                                           class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-primary-500 focus:border-transparent" />
                                 </div>
                             </div>
                             <div class="grid grid-cols-2 gap-3">
                                 <div>
                                     <label class="block text-xs font-medium text-gray-600 mb-1">Tolls (&pound;/day)</label>
                                     <input type="number" x-model.number="leg.tollsPerDay" min="0" step="0.50"
-                                           class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-indigo-500 focus:border-transparent" />
+                                           class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-primary-500 focus:border-transparent" />
                                 </div>
                                 <div>
                                     <label class="block text-xs font-medium text-gray-600 mb-1">Maintenance (&pound;/mile)</label>
                                     <input type="number" x-model.number="leg.maintenancePerMile" min="0" step="0.01"
-                                           class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-indigo-500 focus:border-transparent" />
+                                           class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-primary-500 focus:border-transparent" />
                                 </div>
                             </div>
                             <div class="grid grid-cols-2 gap-3">
                                 <div>
                                     <label class="block text-xs font-medium text-gray-600 mb-1">Depreciation (&pound;/mile)</label>
                                     <input type="number" x-model.number="leg.depreciationPerMile" min="0" step="0.01"
-                                           class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-indigo-500 focus:border-transparent" />
+                                           class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-primary-500 focus:border-transparent" />
                                 </div>
                                 <div></div>
                             </div>
@@ -156,7 +156,7 @@
                         <div x-show="leg.mode === 'train'" x-cloak>
                             <label class="block text-xs font-medium text-gray-600 mb-1">Ticket cost (&pound;/day)</label>
                             <input type="number" x-model.number="leg.ticketPerDay" min="0" step="0.50"
-                                   class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-indigo-500 focus:border-transparent" />
+                                   class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-primary-500 focus:border-transparent" />
                             <p class="text-xs text-gray-400 mt-1">Daily return fare — or divide your season ticket by commute days.</p>
                         </div>
 
@@ -164,14 +164,14 @@
                         <div x-show="leg.mode === 'bus'" x-cloak>
                             <label class="block text-xs font-medium text-gray-600 mb-1">Ticket cost (&pound;/day)</label>
                             <input type="number" x-model.number="leg.busTicketPerDay" min="0" step="0.50"
-                                   class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-indigo-500 focus:border-transparent" />
+                                   class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-primary-500 focus:border-transparent" />
                         </div>
 
                         {{-- Bike fields --}}
                         <div x-show="leg.mode === 'bike'" x-cloak>
                             <label class="block text-xs font-medium text-gray-600 mb-1">Bike maintenance (&pound;/year)</label>
                             <input type="number" x-model.number="leg.bikeMaintenanceYear" min="0" step="10"
-                                   class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-indigo-500 focus:border-transparent" />
+                                   class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-primary-500 focus:border-transparent" />
                             <p class="text-xs text-gray-400 mt-1">Optional — tyres, servicing, etc.</p>
                         </div>
 
@@ -187,7 +187,7 @@
                     type="button"
                     @click="addLeg({{ $r }})"
                     x-show="{{ $r }}.legs.length < 5"
-                    class="w-full py-2 text-sm font-medium text-indigo-600 border border-dashed border-indigo-300 rounded-lg hover:bg-indigo-50 transition-colors"
+                    class="w-full py-2 text-sm font-medium text-primary-600 border border-dashed border-primary-300 rounded-lg hover:bg-primary-50 transition-colors"
                 >+ Add another leg</button>
             </fieldset>
 
@@ -301,7 +301,7 @@
                 <button
                     type="button"
                     @click="copyShare()"
-                    class="absolute top-2 right-2 px-3 py-1.5 bg-indigo-600 text-white text-xs font-medium rounded-lg hover:bg-indigo-700 transition-colors"
+                    class="absolute top-2 right-2 px-3 py-1.5 bg-primary-600 text-white text-xs font-medium rounded-lg hover:bg-primary-700 transition-colors"
                     x-text="copied ? 'Copied!' : 'Copy'"
                 ></button>
             </div>
